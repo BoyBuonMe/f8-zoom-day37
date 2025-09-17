@@ -1,0 +1,18 @@
+.drop {
+    max-width: 400px;
+    background: #ccc;
+    border: 1px solid #000;
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    border-radius: 5px;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: -36.5vw;
+    z-index: -1;
+}

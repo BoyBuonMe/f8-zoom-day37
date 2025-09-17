@@ -1,0 +1,25 @@
+.modalDemo {
+    height: 100%;
+    margin: 10px 0 0 10px;
+}
+
+img {
+    border-radius: 8px;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 20px;
+}
+
+.openBtn {
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.modal-open {
+    background: #000;
+}

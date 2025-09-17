@@ -1,0 +1,57 @@
+.search {
+  position: relative;
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+
+  .icon {
+    width: 20px;
+    top: 12px;
+    left: 13px;
+    opacity: 0.6;
+    position: absolute;
+  }
+
+  input {
+    width: 480px;
+    border: 2px solid #ccc;
+    padding: 10px 40px;
+    border-radius: 50px;
+  }
+}
+
+.content {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h4 {
+  margin-bottom: 5px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.course {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  span {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,19 @@
+.appLogo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .logo {
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    span {
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+}
