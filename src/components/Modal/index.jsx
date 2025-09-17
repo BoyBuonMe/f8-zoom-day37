@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import styles from "./Modal.module.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Modal({
   isOpen = false,
@@ -8,7 +8,7 @@ export default function Modal({
   onRequestClose,
   onAfterOpen,
   onAfterClose,
-  //   closeTimeoutMS = 0,
+  closeTimeoutMS = 0,
   overlayClassName,
   className,
   bodyOpenClassName,
@@ -16,7 +16,7 @@ export default function Modal({
   shouldCloseOnOverlayClick,
   shouldCloseOnEsc,
 }) {
-
+  
   useEffect(() => {
     const handleESC = (e) => {
       if (e.code === "Escape") {
@@ -50,6 +50,17 @@ export default function Modal({
     shouldCloseOnEsc,
   ]);
 
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleCloseModal = () => {
+    setIsClosing(true);
+
+    setTimeout(() => {
+      onRequestClose();
+      setIsClosing(false)
+    }, closeTimeoutMS);
+  }
+
   const handleOverlayClick = () => {
     if (shouldCloseOnOverlayClick) {
       onRequestClose();
@@ -64,20 +75,20 @@ export default function Modal({
 
   return (
     <div className={`${styles.modal} ${customModal}`}>
-      <div className={`${styles.content}`}>
-        <button className={styles.closeBtnX} onClick={onRequestClose}>
+      <div className={`${styles.content} ${isClosing ? styles.closeContent : ""}`}>
+        <button className={styles.closeBtnX} onClick={handleCloseModal}>
           &times;
         </button>
 
         {children}
 
-        <button className={styles.closeBtn} onClick={onRequestClose}>
+        <button className={styles.closeBtn} onClick={handleCloseModal}>
           Đóng
         </button>
       </div>
 
       <div
-        className={`${styles.overlay} ${customOverlay}`}
+        className={`${styles.overlay} ${isClosing ? styles.closeOverlay : ""} ${customOverlay}`}
         onClick={handleOverlayClick}
       ></div>
     </div>

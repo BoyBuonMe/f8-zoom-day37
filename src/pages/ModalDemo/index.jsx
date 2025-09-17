@@ -22,7 +22,7 @@ export default function ModalDemo() {
           onRequestClose={handleRequestClose}
           onAfterOpen={() => console.log("Modal đã mở")}
           onAfterClose={() => console.log("Modal đã đóng")}
-          closeTimeoutMS={900}
+          closeTimeoutMS={500}
           overlayClassName="custom-overlay"
           className="custom-modal"
           bodyOpenClassName="modal-open"

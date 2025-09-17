@@ -14,7 +14,16 @@
 
 .overlay {
   background: rgba($color: #000000, $alpha: 0.7);
-  transition: opacity 0.5s ease;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .content {
@@ -25,7 +34,7 @@
   background: #fff;
   z-index: 1;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  animation: slideUp 0.3s ease;
+  animation: slideUp 0.5s ease;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -53,15 +62,6 @@
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes slideUp {
   from {
     transform: translateY(40px);
@@ -70,5 +70,33 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+.closeOverlay {
+  animation: fadeOut 0.5s ease;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+.closeContent {
+  animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(40px);
+    opacity: 0.5;
   }
 }
